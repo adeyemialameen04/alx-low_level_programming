@@ -18,7 +18,7 @@ for (number2 = number1 + 1; number2 <= 9; number2++)
 {
 putchar(number1 + '0');
 putchar(number2 + '0');
-if (number1 != 8 || number2 != 91)
+if (number1 != 8 || number2 != 9)
 {
 putchar(',');
 putchar(' ');
