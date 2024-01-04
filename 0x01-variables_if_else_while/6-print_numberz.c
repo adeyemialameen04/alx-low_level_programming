@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 /**
  * main - Entry point of the program
  *
@@ -14,8 +13,7 @@ int main(void)
 {
 int num;
 for (num = 0; num <= 9; num++)
-// printf("%d", num);
-putchar('n');
-putchar('\n');
+putchar(num + '0');
+putchar('\n')
 return (0);
 }
