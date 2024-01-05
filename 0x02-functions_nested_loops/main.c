@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -11,6 +12,8 @@
  */
 int main(void)
 {
-print_alphabet_x10();
+int r;
+r = _islower('A');
+printf("Char is %c \n", r);
 return (0);
 }
