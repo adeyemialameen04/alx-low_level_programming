@@ -12,8 +12,9 @@
  */
 int main(void)
 {
-int r;
-r = _islower('A');
-printf("Char is %c \n", r);
+// int r;
+// r = _islower('A');
+_isalpha('A');
+// printf("Char is %c \n", r);
 return (0);
 }
