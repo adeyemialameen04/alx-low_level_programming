@@ -10,6 +10,5 @@ int add(int x, int y)
 {
 int sum;
 sum = x + y;
-printf("%d\n", sum);
 return (sum);
 }
