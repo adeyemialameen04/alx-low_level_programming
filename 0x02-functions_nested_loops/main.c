@@ -17,6 +17,7 @@ int main(void)
 // _isalpha('A');
 // printf("Char is %c \n", r);
 // print_sign(-3);
-_abs(-20);
+// _abs(-20);
+print_to_98(10);
 return (0);
 }
