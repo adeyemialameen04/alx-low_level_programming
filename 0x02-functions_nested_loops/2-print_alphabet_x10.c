@@ -15,5 +15,10 @@ void print_alphabet_x10(void)
 int times;
 
 for (times = 0; times <= 9; times++)
-print_alphabet();
+{
+char ch;
+for (ch = 'a'; ch <= 'z'; ch++)
+_putchar(ch);
+_putchar('\n');
+}
 }
