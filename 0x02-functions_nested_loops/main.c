@@ -16,6 +16,7 @@ int main(void)
 // r = _islower('A');
 // _isalpha('A');
 // printf("Char is %c \n", r);
-print_sign(-3);
+// print_sign(-3);
+_abs(-20);
 return (0);
 }
