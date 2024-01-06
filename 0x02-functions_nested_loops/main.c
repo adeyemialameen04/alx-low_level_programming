@@ -22,6 +22,6 @@ int main(void)
 // print_last_digit(90);
 // times_table();
 // print_times_table(13);
-naturalNumbers();
+// naturalNumbers();
 return (0);
 }
