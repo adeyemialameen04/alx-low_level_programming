@@ -6,14 +6,19 @@
  */
 void times_table(void)
 {
-int i, input;
+int i, input, result;
 for (i = 0; i <= 9; i++)
 {
 for (input = 0; input <= 9; input++)
-if (input == 9)
-printf("%d", i * input);
+{
+result = i * input;
+if (input == 0)
+printf("%2d", result);
+else if (input == 9)
+printf("%3d", result);
 else
-printf("%d, ", i * input);
+printf("%3d, ", result);
+}
 printf("\n");
 }
 }
