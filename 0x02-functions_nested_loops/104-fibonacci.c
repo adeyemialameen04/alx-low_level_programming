@@ -12,7 +12,7 @@
  */
 int main(void)
 {
-int numberOfTerms = 50, i = 1;
+int numberOfTerms = 100, i = 1;
 long int n1 = 1, n2 = 2, nextTerm;
 while (i <= numberOfTerms)
 {
