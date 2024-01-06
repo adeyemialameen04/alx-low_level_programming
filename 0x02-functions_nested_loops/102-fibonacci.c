@@ -12,7 +12,8 @@
  */
 int main(void)
 {
-int numberOfTerms, n1, n2, nextTerm, i;
+int numberOfTerms, n2, nextTerm, i;
+long int n1;
 numberOfTerms = 50;
 n1 = 0;
 n2 = 1;
@@ -20,9 +21,9 @@ n2 = 1;
 for (i = 1; i <= numberOfTerms; i++)
 {
 if (i == 50)
-printf("%d", n1);
+printf("%lu", n1);
 else
-printf("%d, ", n1);
+printf("%lu, ", n1);
 nextTerm = n1 + n2;
 n1 = n2;
 n2 = nextTerm;
