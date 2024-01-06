@@ -13,6 +13,7 @@ int print_last_digit(int);
 void times_table(void);
 void jack_bauer(void);
 void print_times_table(int n);
+int naturalNumbers(void);
 int _putchar(char c);
 
 #endif
