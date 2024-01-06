@@ -19,6 +19,7 @@ int main(void)
 // print_sign(-3);
 // _abs(-20);
 // print_to_98(10);
-print_last_digit(90);
+// print_last_digit(90);
+times_table();
 return (0);
 }
