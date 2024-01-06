@@ -4,26 +4,15 @@
 /**
  * main - Entry point of the program
  *
- * This program generates a random number, prints the last digit of the number,
- * and provides information about the last digit according to
- * the specified conditions.
+ * Description: This function serves as the starting point of the program
+ * and is automatically executed when the program is run. It may call other
+ * functions or perform tasks based on the program's requirements. The return
+ * value is an integer, typically used to indicate the success or failure of
+ * the program execution.
  *
  * Return: Always returns 0 to indicate successful completion.
  */
 int main(void)
-{
-int result;
-result = naturalNumbers();
-return (0);
-}
-
-/**
- * naturalNumbers - Calculates the sum of natural numbers less than 1024
- *                  that are multiples of 3 or 5.
- *
- * Return: The calculated sum.
- */
-int naturalNumbers(void)
 {
 int i, sum;
 sum = 0;
@@ -35,5 +24,5 @@ sum += i;
 }
 }
 printf("%d\n", sum);
-return (0); 
+return (0);
 }
