@@ -20,6 +20,7 @@ int main(void)
 // _abs(-20);
 // print_to_98(10);
 // print_last_digit(90);
-times_table();
+// times_table();
+jack_bauer();
 return (0);
 }
