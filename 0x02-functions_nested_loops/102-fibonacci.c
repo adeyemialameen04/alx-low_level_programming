@@ -15,8 +15,8 @@ int main(void)
 int numberOfTerms, n2, nextTerm, i;
 long int n1;
 numberOfTerms = 50;
-n1 = 0;
-n2 = 1;
+n1 = 1;
+n2 = 2;
 
 for (i = 1; i <= numberOfTerms; i++)
 {
