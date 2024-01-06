@@ -12,6 +12,5 @@ int lastDigit;
 lastDigit = number % 10;
 if (lastDigit < 0)
 lastDigit = -lastDigit;
-_putchar(lastDigit + '0');
 return (lastDigit);
 }
