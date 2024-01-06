@@ -21,6 +21,6 @@ int main(void)
 // print_to_98(10);
 // print_last_digit(90);
 // times_table();
-print_times_table(5);
+print_times_table(13);
 return (0);
 }
