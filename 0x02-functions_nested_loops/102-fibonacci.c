@@ -12,22 +12,20 @@
  */
 int main(void)
 {
-int numberOfTerms, n2, nextTerm, i;
-long int n1;
-numberOfTerms = 50;
-n1 = 1;
-n2 = 2;
-
-for (i = 1; i <= numberOfTerms; i++)
+int numberOfTerms = 50, i = 2;
+long int n1 = 1, n2 = 2, nextTerm;
+while (i <= numberOfTerms)
 {
-if (i == 50)
-printf("%lu", n1);
+if (i == numberOfTerms)
+printf("%lu\n", n1);
 else
+{
 printf("%lu, ", n1);
 nextTerm = n1 + n2;
 n1 = n2;
 n2 = nextTerm;
 }
-putchar('\n');
+i++;
+}
 return (0);
 }
