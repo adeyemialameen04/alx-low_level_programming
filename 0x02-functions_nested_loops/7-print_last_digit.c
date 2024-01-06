@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * print_last_digit - Returns the last digit of a number.
@@ -12,5 +12,6 @@ int lastDigit;
 lastDigit = number % 10;
 if (lastDigit < 0)
 lastDigit = -lastDigit;
+_putchar(lastDigit + '0');
 return (lastDigit);
 }
