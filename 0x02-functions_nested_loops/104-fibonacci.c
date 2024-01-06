@@ -13,14 +13,14 @@
 int main(void)
 {
 int numberOfTerms = 100, i = 1;
-unsigned long long int n1 = 1, n2 = 2, nextTerm;
+unsigned long int n1 = 1, n2 = 2, nextTerm;
 while (i <= numberOfTerms)
 {
 if (i == numberOfTerms)
-printf("%llu\n", n1);
+printf("%lu\n", n1);
 else
 {
-printf("%llu, ", n1);
+printf("%lu, ", n1);
 nextTerm = n1 + n2;
 n1 = n2;
 n2 = nextTerm;
