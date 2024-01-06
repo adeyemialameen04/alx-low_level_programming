@@ -21,7 +21,9 @@ if (column != 0)
 {
 printf(", ");
 if (product < 10)
-printf(" ");
+printf("   ");
+else if (product < 100)
+printf("  ");
 }
 
 printf("%d", product);
