@@ -21,6 +21,6 @@ int main(void)
 // print_to_98(10);
 // print_last_digit(90);
 // times_table();
-jack_bauer();
+print_times_table(5);
 return (0);
 }
