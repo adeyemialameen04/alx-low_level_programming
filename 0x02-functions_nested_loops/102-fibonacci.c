@@ -13,22 +13,19 @@
 int main(void)
 {
 int numberOfTerms, n1, n2, nextTerm, i;
-n1 = 1;
-n2 = 2;
 numberOfTerms = 50;
+n1 = 0;
+n2 = 1;
 
 for (i = 1; i <= numberOfTerms; i++)
 {
-if (numberOfTerms != 0)
-{
-nextTerm = n1 + n2;
-n1 = n2;
-n2 = nextTerm;
 if (i == 50)
 printf("%d", n1);
 else
 printf("%d, ", n1);
-}
+nextTerm = n1 + n2;
+n1 = n2;
+n2 = nextTerm;
 }
 putchar('\n');
 return (0);
