@@ -13,7 +13,7 @@
 int main(void)
 {
 int numberOfTerms = 100, i = 1;
-long int n1 = 1, n2 = 2, nextTerm;
+unsigned long int n1 = 1, n2 = 2, nextTerm;
 while (i <= numberOfTerms)
 {
 if (i == numberOfTerms)
