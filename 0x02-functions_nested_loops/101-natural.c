@@ -12,7 +12,8 @@
  */
 int main(void)
 {
-naturalNumbers();
+int result;
+result = naturalNumbers();
 return (0);
 }
 
@@ -34,4 +35,5 @@ sum += i;
 }
 }
 printf("%d\n", sum);
+return (0); 
 }
