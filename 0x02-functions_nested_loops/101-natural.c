@@ -2,6 +2,22 @@
 #include "main.h"
 
 /**
+ * main - Entry point of the program
+ *
+ * This program generates a random number, prints the last digit of the number,
+ * and provides information about the last digit according to
+ * the specified conditions.
+ *
+ * Return: Always returns 0 to indicate successful completion.
+ */
+int main(void)
+{
+int result;
+result = naturalNumbers();
+return (result);
+}
+
+/**
  * naturalNumbers - Calculates the sum of natural numbers less than 1024
  *                  that are multiples of 3 or 5.
  *
@@ -18,6 +34,5 @@ if (i % 3 == 0 || i % 5 == 0)
 sum += i;
 }
 }
-printf("%d\n", sum);
 return (sum);
 }
