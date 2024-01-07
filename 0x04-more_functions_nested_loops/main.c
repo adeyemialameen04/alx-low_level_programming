@@ -8,6 +8,7 @@ int main(void)
 // printf("%d\n", result);
 
 // print_most_numbers();
-more_numbers();
+// more_numbers();
+print_line(2);
     return (0);
 }
