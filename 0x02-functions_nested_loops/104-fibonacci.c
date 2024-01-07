@@ -3,7 +3,7 @@
 /**
  * main - Entry point of the program.
  *
- * Description: This program generates the first 100 terms of the Fibonacci
+ * Description: This program generates the first 98 terms of the Fibonacci
  * sequence and prints them with commas between each term, except for the last
  * one. The Fibonacci sequence starts with 1 and 2, and each subsequent term
  * is the sum of the two preceding ones.
