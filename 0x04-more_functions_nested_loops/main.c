@@ -7,6 +7,7 @@ int main(void)
 // result = _isupper('a');
 // printf("%d\n", result);
 
-print_most_numbers();
+// print_most_numbers();
+more_numbers();
     return (0);
 }
