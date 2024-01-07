@@ -11,6 +11,7 @@ int main(void)
 // more_numbers();
 // print_line(2);
 // print_diagonal(2);
-print_square(0);
+// print_square(0);
+print_triangle(3);
     return (0);
 }
