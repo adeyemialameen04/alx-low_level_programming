@@ -12,6 +12,7 @@ int main(void)
 // print_line(2);
 // print_diagonal(2);
 // print_square(0);
-print_triangle(3);
+// print_triangle(3);
+print_number(-84);
     return (0);
 }
