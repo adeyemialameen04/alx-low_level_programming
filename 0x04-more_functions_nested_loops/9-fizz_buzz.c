@@ -16,22 +16,14 @@ char buzz[] = "Buzz";
 char fizzbuzz[] = "FizzBuzz";
 for (i = 1; i <= 100; i++)
 {
-if (i % 3 == 0)
-{
-printf("%s ", fizz);
-}
+if (i % 3 == 0 && i % 5 == 0)
+printf("FizzBuzz ");
 else if (i % 5 == 0)
-{
-printf("%s ", buzz);
-}
-else if ((i % 3 == 0) && (i % 5 == 0))
-{
-printf("%s ", fizzbuzz);
-}
+printf("Buzz ");
+else if (i % 3 == 0)
+printf("Fizz ");
 else
-{
 printf("%d ", i);
-}
 }
 printf("\n");
 }
