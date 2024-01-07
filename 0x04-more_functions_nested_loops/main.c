@@ -10,6 +10,7 @@ int main(void)
 // print_most_numbers();
 // more_numbers();
 // print_line(2);
-print_diagonal(2);
+// print_diagonal(2);
+print_square(0);
     return (0);
 }
