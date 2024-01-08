@@ -9,8 +9,7 @@
  */
 int main(void)
 {
-int i;
-unsigned long int number;
+unsigned long int i, number;
 number = 612852475143;
 for (i = 2; i <= number / i; i++)
 {
@@ -23,4 +22,10 @@ if (number > 1)
 {
 printf("%lu\n", number);
 }
+else
+{
+return;
+}
+
+return (0);
 }
