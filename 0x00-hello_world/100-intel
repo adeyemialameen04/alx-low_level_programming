@@ -1,20 +1,2 @@
 #!/bin/bash
-
-# Check if CFILE variable is set
-if [ -z "$CFILE" ]; then
-    echo "Error: CFILE variable is not set."
-    exit 1
-fi
-
-# Set output file name with .s extension
-OUTPUT_FILE="${CFILE%.c}.s"
-
-# Generate assembly code using GCC with Intel syntax
-gcc -S -masm=intel "$CFILE" -o "$OUTPUT_FILE"
-
-# Check if compilation was successful
-if [ $? -eq 0 ]; then
-    echo "Assembly code generated successfully. Output saved to: $OUTPUT_FILE"
-else
-    echo "Error: Failed to generate assembly code."
-fi
+gcc -S -masm=intel $CFILE
