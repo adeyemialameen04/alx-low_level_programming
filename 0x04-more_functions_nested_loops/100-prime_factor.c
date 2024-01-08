@@ -9,23 +9,18 @@
  */
 int main(void)
 {
-unsigned long int i, number;
+unsigned long int number, largest;
 number = 612852475143;
-for (i = 2; i <= number / i; i++)
+largest = 2;
+
+while (number > largest)
 {
-while (number % i == 0)
-{
-number = number / i;
-}
-}
-if (number > 1)
-{
-printf("%lu\n", number);
-}
+if (number % largest == 0)
+number /= largest;
 else
-{
-return;
+largest++;
 }
 
+printf("%lu\n", largest);
 return (0);
 }
