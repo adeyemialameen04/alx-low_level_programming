@@ -4,10 +4,17 @@
 
 void puts_half(char *str)
 {
-int len, i;
-len = strlen(str);
-for (i = 0; i < len / 2; i++)
+int len = 0, i, start = 0;
+
+while(str[len] != '\0')
 {
-printf("%d\n", str[i]);
+len++;
 }
-}
+
+start = (len + 1) / 2;
+
+for (i = start; i < len; i++)
+_putchar(str[i]);
+
+_putchar('\n');
+}  
