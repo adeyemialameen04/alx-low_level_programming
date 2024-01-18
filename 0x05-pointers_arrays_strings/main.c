@@ -8,10 +8,7 @@ int main(void)
     //  reset_to_98(&n);
     // printf("%d\n", n);
     // int x = 0, y=0;
-char *str;
-str = "Al-ameen";
-int len = 0;
-len = _strlen(str);
-printf("%d",len);
-    return(0);
+char str[] = "Al-ameen";
+print_rev(str);
+return(0);
 }
