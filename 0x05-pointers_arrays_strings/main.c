@@ -8,9 +8,11 @@ int main(void)
     //  reset_to_98(&n);
     // printf("%d\n", n);
     // int x = 0, y=0;
-    char *str;
+    char s[10] = "My School";
 
-    str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
-print_rev(str);
-return(0);
+    printf("%s\n", s);
+    rev_string(s);
+    printf("%s\n", s);
+    return (0);
+
 }
