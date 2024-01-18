@@ -8,7 +8,9 @@ int main(void)
     //  reset_to_98(&n);
     // printf("%d\n", n);
     // int x = 0, y=0;
-char str[] = "Al-ameen";
+    char *str;
+
+    str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
 print_rev(str);
 return(0);
 }
