@@ -15,9 +15,13 @@ int main(void)
     // printf("%s\n", s);
     // return (0);
 
-    char *str;
+    int array[5];
 
-    str = "0123456789";
-    puts2(str);
+    array[0] = 98;
+    array[1] = 402;
+    array[2] = -198;
+    array[3] = 298;
+    array[4] = -1024;
+    print_array(array, 5);
     return (0);
 }
