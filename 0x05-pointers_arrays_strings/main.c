@@ -7,6 +7,11 @@ int main(void)
     // printf("%d\n", n);
     //  reset_to_98(&n);
     // printf("%d\n", n);
-    int x = 0, y=0;
+    // int x = 0, y=0;
+char *str;
+str = "Al-ameen";
+int len = 0;
+len = _strlen(str);
+printf("%d",len);
     return(0);
 }
