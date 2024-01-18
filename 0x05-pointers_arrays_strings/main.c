@@ -15,9 +15,9 @@ int main(void)
     // printf("%s\n", s);
     // return (0);
 
-    char *str;
+    // char *str;
 
-    str = "0123456789";
-    puts_half(str);
-    return (0);
+    // str = "0123456789";
+    // puts_half(str);
+    // return (0);
 }
