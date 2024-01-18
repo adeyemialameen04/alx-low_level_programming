@@ -10,8 +10,8 @@
 int main(void)
 {
 int i;
-srand(time(NULL));
 char str[16];
+srand(time(NULL));
 for (i = 0; i < 15; i++)
 str[i] = rand() % (122 - 97 + 1) + 97;
 str[15] = 0;
