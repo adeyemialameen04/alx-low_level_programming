@@ -19,7 +19,7 @@ char *_strncat(char *dest, char *src, int n)
 int len1 = 0;
 int i;
 len1 = strlen(dest);
-for (i = 0; i <= n && src[i] != '\0'; i++)
+for (i = 0; i < n && src[i] != '\0'; i++)
 {
 dest[len1 + i] = src[i];
 }
