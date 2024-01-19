@@ -1,34 +1,41 @@
-
 /**
- * cap_string - Capitalizes the first letter of each word in a string.
- * @str: The input string.
- *
- * Description: This function takes a string as input and capitalizes
- * the first letter of each word in the string. Words are separated by
- * space, tab, or newline characters.
- *
- * Return: A pointer to the modified string.
- */
+* cap_string - Capitalizes the first letter of each word in a string.
+* @str: The input string.
+*
+* Description: This function takes a string as input and capitalizes
+* the first letter of each word in the string. Words are separated by
+* space, tab, newline, comma, semicolon, period, exclamation mark,
+* question mark, double quote, open parenthesis, close parenthesis,
+* open curly brace, or close curly brace characters.
+*
+* Return: A pointer to the modified string.
+*/
 char *cap_string(char *str)
 {
-int i, capitalizeNxt = 1;
+int i;
+int capitalizeNext = 1;
 
 for (i = 0; str[i] != '\0'; i++)
 {
-if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
+str[i] == ',' || str[i] == ';' || str[i] == '.' ||
+str[i] == '!' || str[i] == '?' || str[i] == '"' ||
+str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}')
 {
-capitalizeNxt = 1;
+capitalizeNext = 1;
 }
 else
 {
-if (capitalizeNxt)
+if (capitalizeNext && (str[i] >= 'a' && str[i] <= 'z'))
 {
-if (str[i] >= 97 && str[i] <= 122)
+str[i] = str[i] - ('a' - 'A');
+capitalizeNext = 0;
+}
+else if (!(capitalizeNext)&&(str[i] >= 'A' && str[i] <= 'Z'))
 {
-str[i] = str[i] - 32;
+str[i] = str[i] + ('a' - 'A');
 }
-capitalizeNxt = 0;
-}
+capitalizeNext = 0;
 }
 }
 
