@@ -16,21 +16,23 @@
  */
 char *leet(char *str)
 {
-int i;
-for (i = 0; str[i] != '\0'; i++)
+int count = 0, i;
+int lowercase[] = {97, 101, 111, 116, 108};
+int uppercase[] = {65, 69, 79, 84, 76};
+int num[] = {52, 51, 48, 55, 49};
+
+while (*(str + count) != '\0')
 {
-if (str[i] == 'a' || str[i] == 'A')
-str[i] = '4';
-else if (str[i] == 'e' || str[i] == 'E')
-str[i] = '3';
-else if (str[i] == 'o' || str[i] == 'O')
-str[i] = '0';
-else if (str[i] == 't' || str[i] == 'T')
-str[i] = '7';
-else if (str[i] == 'l' || str[i] == 'L')
-str[i] = '1';
-else
-str[i] = str[i];
+for (i = 0; i < 5; i++)
+{
+if (*(str + count) == lowercase[i] || *(str + count) == uppercase[i])
+{
+*(str + count) = num[i];
+break;
 }
+}
+count++;
+}
+
 return (str);
 }
