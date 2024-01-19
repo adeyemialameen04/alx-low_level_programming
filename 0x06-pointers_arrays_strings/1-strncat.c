@@ -20,10 +20,16 @@ int len1, len2, i;
 len1 = strlen(dest);
 len2 = strlen(src);
 
-for (i = 0; i < n; i++)
+while (n <= len2)
 {
 dest[len1 + i] = src[i];
+i++;
 }
+
+// for (i = 0; i < n; i++)
+// {
+// dest[len1 + i] = src[i];
+// }
 
 return (dest);
 }
