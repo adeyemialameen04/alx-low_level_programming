@@ -16,18 +16,19 @@
  */
 char *leet(char *str)
 {
-int count = 0, i;
-int lowercase[] = {97, 101, 111, 116, 108};
+int count = 0;
+int i;
+int numbers[] = {52, 51, 48, 55, 49};
 int uppercase[] = {65, 69, 79, 84, 76};
-int num[] = {52, 51, 48, 55, 49};
+int lowercase[] = {97, 101, 111, 116, 108};
 
 while (*(str + count) != '\0')
 {
 for (i = 0; i < 5; i++)
 {
-if (*(str + count) == lowercase[i] || *(str + count) == uppercase[i])
+if (*(str + count) == uppercase[i] || *(str + count) == lowercase[i])
 {
-*(str + count) = num[i];
+*(str + count) = numbers[i];
 break;
 }
 }
