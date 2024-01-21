@@ -1,18 +1,17 @@
 #include <stdio.h>
+#include <string.h>
 #include "main.h"
 
 void simple_print_buffer(char *buffer, unsigned int size);
 
 int main(void)
 {
-    char *f;
+    char *s = "hello, world";
+    char *f = "world";
+    char *t;
 
-    f = _strchr("First, solve the problem. Then, write the code.", '\0');
-
-    if (f != NULL)
-    {
-        printf("%s\n", f);
-    }
+    t = _strpbrk(s, f);
+    printf("%s\n", t);
     return (0);
 }
 
