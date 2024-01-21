@@ -1,4 +1,3 @@
 #!/bin/bash
-for file in $(find . -name "*.c"); do
-gcc -c "$file"
-done
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 -c *.c
+ar -rc liball.a *.o
