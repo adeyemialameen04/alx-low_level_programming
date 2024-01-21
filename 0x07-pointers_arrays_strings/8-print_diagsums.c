@@ -19,5 +19,5 @@ for (i = 0; i < size; i++)
 diagonal2 += a[i * size + (size - 1 - i)];
 }
 
-printf("%d, %d\n", diagonal1, diagonal1);
+printf("%d, %d\n", diagonal1, diagonal2);
 }
