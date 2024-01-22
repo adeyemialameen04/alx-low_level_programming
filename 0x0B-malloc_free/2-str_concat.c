@@ -14,10 +14,6 @@ char *str_concat(char *s1, char *s2)
 {
 unsigned int i, j, len1 = 0, len2 = 0;
 char *concatenated;
-if (s1 == NULL)
-s1 = "";
-if (s2 == NULL)
-s2 = "";
 
 while (s1[len1] != '\0')
 len1++;
