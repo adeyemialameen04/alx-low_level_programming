@@ -34,7 +34,7 @@ for (i = 0; i < len1; i++)
 concatenated[i] = s1[i];
 
 for (j = 0; j <= len2; j++)
-concatenated[len1 + j] = s2[i];
+concatenated[len1 + j] = s2[j];
 
 return (concatenated);
 }
