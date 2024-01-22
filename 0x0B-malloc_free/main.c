@@ -3,19 +3,22 @@
 #include  <stdio.h>
 
 void simple_print_buffer(char *buffer, unsigned int size);
+void print_grid(int **grid, int width, int height);
 
 int main(void)
 {
-    char *s;
+  int **grid;
 
-    s = str_concat("Betty ", "Holberton");
-    if (s == NULL)
+    grid = alloc_grid(6, 4);
+    if (grid == NULL)
     {
-        printf("failed\n");
         return (1);
     }
-    printf("%s\n", s);
-    free(s);
+    print_grid(grid, 6, 4);
+    printf("\n");
+    grid[0][3] = 98;
+    grid[3][4] = 402;
+    print_grid(grid, 6, 4);
     return (0);
 }
 
@@ -41,6 +44,33 @@ int main(void)
 
 
 
+
+/**
+ * print_grid - prints a grid of integers
+ * @grid: the address of the two dimensional grid
+ * @width: width of the grid
+ * @height: height of the grid
+ *
+ * Return: Nothing.
+ */
+void print_grid(int **grid, int width, int height)
+{
+    int w;
+    int h;
+
+    h = 0;
+    while (h < height)
+    {
+        w = 0;
+        while (w < width)
+        {
+            printf("%d ", grid[h][w]);
+            w++;
+        }
+        printf("\n");
+        h++;
+    }   
+}
 
 
 
