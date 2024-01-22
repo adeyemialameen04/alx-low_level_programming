@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-unsigned long long num1 = 0, num2 = 0, mul = 0;
+unsigned long num1 = 0, num2 = 0, mul = 0;
 if (argc != 3)
 {
 return (1);
@@ -18,6 +18,6 @@ return (1);
 num1 = atoi(argv[1]);
 num2 = atoi(argv[2]);
 mul = num1 *num2;
-printf("%lld\n", mul);
+printf("%ld\n", mul);
 return (0);
 }
