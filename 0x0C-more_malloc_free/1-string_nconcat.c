@@ -38,5 +38,7 @@ result[i] = s1[i];
 for (j = 0; j <= n; j++)
 result[len1 + j] = s2[j];
 
+result[len1 + n] = '\0';
+
 return (result);
 }
