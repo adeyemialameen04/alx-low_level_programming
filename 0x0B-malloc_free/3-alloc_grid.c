@@ -18,6 +18,11 @@ if (width <= 0 || height <= 0)
 return (NULL);
 }
 
+if (grid == NULL)
+{
+return (NULL);
+}
+
 for (i = 0; i < width; i++)
 {
 grid[i] = malloc(sizeof(int) * 3);
