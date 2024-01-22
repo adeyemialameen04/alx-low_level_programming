@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 /**
-* main - prints the minimum number of coins to make change for an amount
-* @argc: the number of arguments
-* @argv: an array of arguments
-*
-* Return: 0 on success, 1 on error
-*/
+ * main - prints the minimum number of coins to make change for an amount
+ * @argc: the number of arguments
+ * @argv: an array of arguments
+ *
+ * Return: 0 on success, 1 on error
+ */
 int main(int argc, char *argv[])
 {
 if (argc != 2)
@@ -25,18 +25,17 @@ return (0);
 }
 
 int coins[] = {25, 10, 5, 2, 1};
-int num_coins = sizeof(coins) / sizeof(coins[0]);
-int count = 0;
+int numCoins = 0;
 
-for (int i = 0; i < num_coins; i++)
+for (int i = 0; i < 5; i++)
 {
 while (cents >= coins[i])
 {
 cents -= coins[i];
-count++;
+numCoins++;
 }
 }
 
-printf("%d\n", count);
+printf("%d\n", numCoins);
 return (0);
 }
