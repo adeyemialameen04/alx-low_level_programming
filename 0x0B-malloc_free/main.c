@@ -2,12 +2,11 @@
 #include <stdlib.h>
 #include  <stdio.h>
 
-void simple_print_buffer(char *buffer, unsigned int size);
 void print_grid(int **grid, int width, int height);
 
 int main(void)
 {
-  int **grid;
+    int **grid;
 
     grid = alloc_grid(6, 4);
     if (grid == NULL)
@@ -19,11 +18,9 @@ int main(void)
     grid[0][3] = 98;
     grid[3][4] = 402;
     print_grid(grid, 6, 4);
+    free_grid(grid, 4);
     return (0);
 }
-
-
-
 
 
 
@@ -70,29 +67,4 @@ void print_grid(int **grid, int width, int height)
         printf("\n");
         h++;
     }   
-}
-
-
-
-
-
-void simple_print_buffer(char *buffer, unsigned int size)
-{
-    unsigned int i;
-
-    i = 0;
-    while (i < size)
-    {
-        if (i % 10)
-        {
-            printf(" ");
-        }
-        if (!(i % 10) && i)
-        {
-            printf("\n");
-        }
-        printf("0x%02x", buffer[i]);
-        i++;
-    }
-    printf("\n");
 }
