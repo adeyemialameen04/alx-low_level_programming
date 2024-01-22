@@ -23,9 +23,10 @@ if (grid == NULL)
 return (NULL);
 }
 
-for (i = 0; i < width; i++)
+for (i = 0; i < height; i++)
 {
 grid[i] = malloc(sizeof(int) * 3);
+
 }
 
 for (i = 0; i < height; i++)
