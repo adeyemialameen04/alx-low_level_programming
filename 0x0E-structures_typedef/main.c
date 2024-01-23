@@ -1,21 +1,16 @@
-#include "main.h"
-#include <stdlib.h>
-#include  <stdio.h>
-#include <limits.h>
-#include <string.h>
+#include <stdio.h>
+#include "dog.h"
 
-
-void simple_print_buffer(int *buffer, unsigned int size);
-
-
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-    int *a;
-    a = array_range(0, 10);
-    simple_print_buffer(a, 11);
-    free(a);
+    struct dog my_dog;
+
+    init_dog(&my_dog, "Poppy", 3.5, "Bob");
+    printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog.name, my_dog.age);
     return (0);
 }
-
-
-
