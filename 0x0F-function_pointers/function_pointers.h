@@ -3,4 +3,4 @@
 
 void print_name(char *name, void (*f)(char *));
 
-#endif // #ifndef _FUNCTION_POINTERS_H_
+#endif /* #ifndef _FUNCTION_POINTERS_H_ */
