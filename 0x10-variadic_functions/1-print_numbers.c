@@ -18,11 +18,10 @@ va_start(args, n);
 for (i = 0; i < n; i++)
 {
 int x = va_arg(args, int);
-printf("%d%s", x, separator);
-if (i != n)
-{
 printf("%d", x);
-}
+
+if (i < n - 1 && separator != NULL)
+printf("%s", separator);
 }
 printf("\n");
 va_end(args);
