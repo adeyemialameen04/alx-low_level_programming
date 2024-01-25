@@ -13,10 +13,10 @@ unsigned int i;
 int sum = 0;
 va_list args;
 if (n == 0)
-va_start(args, n);
 {
 return (0);
 }
+va_start(args, n);
 for (i = 0; i < n; i++)
 {
 int x = va_arg(args, int);
