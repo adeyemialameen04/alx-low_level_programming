@@ -46,6 +46,9 @@ break;
 }
 
 i++;
+if (format[i] && (format[i] == 'c' || format[i] == 'i' ||
+format[i] == 'f' || format[i] == 's'))
+printf(", ");
 }
 
 printf("\n");
