@@ -46,8 +46,6 @@ break;
 }
 
 i++;
-if (format[i])
-printf(", ");
 }
 
 printf("\n");
