@@ -25,25 +25,29 @@ va_start(args, format);
 
 while (format && format[i])
 {
-switch (format[i])
+if (format[i] == '%' && format[i + 1] == 'c')
 {
-case 'c':
 ch = va_arg(args, int);
 printf("%c", ch);
-break;
-case 'i':
+}
+else if (format[i] == '%' && format[i + 1] == 'i')
+{
 num = va_arg(args, int);
 printf("%d", num);
-break;
-case 'f':
+}
+else if (format[i] == '%' && format[i + 1] == 'f')
+{
 flt = va_arg(args, double);
 printf("%f", flt);
-break;
-case 's':
+}
+else if (format[i] == '%' && format[i + 1] == 's')
+{
 str = va_arg(args, char*);
 printf("%s", (str != NULL) ? str : "(nil)");
 break;
 }
+
+
 
 i++;
 if (format[i] && (format[i] == 'c' || format[i] == 'i' ||
