@@ -14,6 +14,7 @@ int main(int argc, char *argv[]);
 int main(int argc, char *argv[])
 {
 	int fd, i;
+	unsigned long int j;
 	Elf32_Ehdr ehdr32;
 	Elf64_Ehdr ehdr64;
 
@@ -86,6 +87,23 @@ int main(int argc, char *argv[])
 
 		printf("  Entry point address:               %#lx\n",
 			   (unsigned long)ehdr32.e_entry);
+		if (ehdr32.e_ident[EI_DATA] == ELFDATA2MSB)
+		{
+			unsigned long entry_point_swapped = 0;
+
+			for (j = 0; j < sizeof(ehdr32.e_entry); j++)
+			{
+				entry_point_swapped = (entry_point_swapped << 8) |
+									  ((ehdr32.e_entry >> ((sizeof(ehdr32.e_entry) - j - 1) * 8)) &
+									   0xFF);
+			}
+			printf("  Entry point address (big endian): %#lx\n", entry_point_swapped);
+		}
+		else
+		{
+			printf("  Entry point address (little endian): %#lx\n",
+				   (unsigned long)ehdr32.e_entry);
+		}
 	}
 
 	else if (read(fd, &ehdr64, sizeof(ehdr64)) == sizeof(ehdr64))
