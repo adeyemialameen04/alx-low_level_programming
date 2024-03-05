@@ -10,22 +10,22 @@
 
 char *_strdup(char *str)
 {
-unsigned int i, length = 0;
-char *duplicate;
+	unsigned int i, length = 0;
+	char *duplicate;
 
-if (str == NULL)
-return (NULL);
+	if (str == NULL)
+		return (NULL);
 
-while (str[length] != '\0')
-length++;
+	while (str[length] != '\0')
+		length++;
 
-duplicate = malloc(sizeof(char) * (length + 1));
+	duplicate = malloc(sizeof(char) * (length + 1));
 
-if (duplicate == NULL)
-return (NULL);
+	if (duplicate == NULL)
+		return (NULL);
 
-for (i = 0; i <= length; i++)
-duplicate[i] = str[i];
+	for (i = 0; i <= length; i++)
+		duplicate[i] = str[i];
 
-return (duplicate);
+	return (duplicate);
 }
