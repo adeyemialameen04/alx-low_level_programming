@@ -52,7 +52,9 @@ int main(int argc, char *argv[])
 		case ELFOSABI_NETBSD:
 			printf("UNIX - NetBSD\n");
 			break;
-
+		case ELFOSABI_SOLARIS:
+			printf("UNIX - Solaris\n");
+			break;
 		default:
 			printf("<unknown: %x>\n", ehdr32.e_ident[EI_OSABI]);
 		}
