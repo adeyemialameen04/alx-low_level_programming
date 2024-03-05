@@ -14,7 +14,6 @@ int main(int argc, char *argv[]);
 int main(int argc, char *argv[])
 {
 	int fd, i;
-	unsigned long int j;
 	Elf32_Ehdr ehdr32;
 	Elf64_Ehdr ehdr64;
 
