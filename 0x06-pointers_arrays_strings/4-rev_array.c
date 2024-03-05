@@ -12,12 +12,18 @@
  */
 void reverse_array(int *a, int n)
 {
-int i;
-for (i = n - 1; i >= 0; i--)
-{
-printf("%d", a[i]);
-if (i > 0)
-printf(", ");
-}
-printf("\n");
+    int start = 0;
+    int end = n - 1;
+
+    while (start < end)
+    {
+        // Swap elements at start and end indices
+        int temp = a[start];
+        a[start] = a[end];
+        a[end] = temp;
+
+        // Move indices towards each other
+        start++;
+        end--;
+    }
 }
