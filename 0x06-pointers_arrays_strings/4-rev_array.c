@@ -12,12 +12,17 @@
  */
 void reverse_array(int *a, int n)
 {
-int i;
-for (i = n - 1; i >= 0; i--)
+int start = 0;
+int end = n - 1;
+
+while (start < end)
 {
-printf("%d", a[i]);
-if (i > 0)
-printf(", ");
+int temp = a[start];
+
+a[start] = a[end];
+a[end] = temp;
+
+start++;
+end--;
 }
-printf("\n");
 }
