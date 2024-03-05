@@ -88,17 +88,7 @@ int main(int argc, char *argv[])
 		printf("  Entry point address:               %#lx\n",
 			   (unsigned long)ehdr32.e_entry);
 	}
-	if (ehdr32.e_ident[EI_DATA] == ELFDATA2MSB)
-	{
-		unsigned long entry_point_swapped = 0;
 
-		for (j = 0; j < sizeof(ehdr32.e_entry); j++)
-		{
-			entry_point_swapped = (entry_point_swapped << 8) |
-								  ((ehdr32.e_entry >> (j * 8)) & 0xFF);
-		}
-		printf("  Entry point address (big endian): %#lx\n", entry_point_swapped);
-	}
 	else if (read(fd, &ehdr64, sizeof(ehdr64)) == sizeof(ehdr64))
 	{
 
