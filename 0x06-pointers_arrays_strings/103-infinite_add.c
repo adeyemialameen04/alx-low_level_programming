@@ -1,59 +1,43 @@
+#include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include "string.h"
 
 /**
- * infinite_add - Adds two positive numbers represented as strings.
- * @n1: First number (as a string).
- * @n2: Second number (as a string).
- * @r: Buffer to store the result.
- * @size_r: Size of the buffer.
+ * infinite_add - Adds two numbers.
+ * @n1: The first number as a string.
+ * @n2: The second number as a string.
+ * @r: The buffer to store the result.
+ * @size_r: The size of the buffer.
  *
- * Return: Pointer to the result (r) or 0 if result cannot be stored.
+ * Return: A pointer to the result, or 0 if the result cannot be stored.
  */
-char *infinite_add(char *n1, char *n2, char *r, int size_r);
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, j, k, len1, len2, carry;
+	int i, j, carry = 0, len1, len2, max_len;
 
-	len1 = strlen(n1);
-	len2 = strlen(n2);
+	/* Calculate the lengths of the input strings */
+	for (len1 = 0; n1[len1] != '\0'; len1++)
+		;
+	for (len2 = 0; n2[len2] != '\0'; len2++)
+		;
 
-	if (len1 + len2 + 2 >= size_r)
-	{
+	max_len = (len1 > len2) ? len1 : len2;
+
+	if (max_len + 1 > size_r)
 		return (0);
-	}
 
-	k = size_r - 1;
-	r[k] = '\0';
-	k--;
+	r[max_len + 1] = '\0';
 
-	carry = 0;
-	i = len1 - 1;
-	j = len2 - 1;
-	while (i >= 0 || j >= 0 || carry)
+	for (i = len1 - 1, j = len2 - 1; i >= 0 || j >= 0 || carry > 0; i--, j--)
 	{
-		int digit1 = (i >= 0) ? n1[i] - '0' : 0;
-		int digit2 = (j >= 0) ? n2[j] - '0' : 0;
+		int digit1 = (i >= 0) ? (n1[i] - '0') : 0;
+		int digit2 = (j >= 0) ? (n2[j] - '0') : 0;
 		int sum = digit1 + digit2 + carry;
 
 		carry = sum / 10;
-		r[k] = '0' + (sum % 10);
-		k--;
-		i--;
-		j--;
-	}
+		r[max_len] = (sum % 10) + '0';
 
-	i = 0;
-	while (r[i] == '0' && r[i + 1] != '\0')
-	{
-		i++;
+		max_len--;
 	}
-	for (j = i; j < size_r; j++)
-	{
-		r[j - i] = r[j];
-	}
-	r[size_r - i] = '\0';
 
 	return (r);
 }
