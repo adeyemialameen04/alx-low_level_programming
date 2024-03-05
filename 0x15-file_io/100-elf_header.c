@@ -13,7 +13,7 @@
 int main(int argc, char *argv[]);
 int main(int argc, char *argv[])
 {
-	int fd;
+	int fd, i;
 	Elf64_Ehdr ehdr;
 
 	if (argc != 2)
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	printf("ELF Header:\n");
 
 	printf("  Magic:   ");
-	for (int i = 0; i < EI_NIDENT; i++)
+	for (i = 0; i < EI_NIDENT; i++)
 		printf("%02x%c", ehdr.e_ident[i], i + 1 < EI_NIDENT ? ' ' : '\n');
 
 	printf("  Class:                             ");
