@@ -1,5 +1,5 @@
-#include "main.h"
 #include <stdio.h>
+#include <ctype.h>
 
 /**
  * print_buffer - Prints the content of a buffer.
@@ -25,19 +25,25 @@ void print_buffer(char *b, int size)
 		for (j = 0; j < 10; j++)
 		{
 			if (i + j < size)
-				printf("%02x%02x", (unsigned char)b[i + j],
-					   (i + j + 1 < size) ? (unsigned char)b[i + j + 1] : 0);
+				printf("%02x ", (unsigned char)b[i + j]);
 			else
-				printf("    ");
-
-			if (j % 2)
-				printf(" ");
+				printf("   ");
 		}
+
+		printf(" ");
 
 		for (j = 0; j < 10; j++)
 		{
 			if (i + j < size)
-				printf("%c", (b[i + j] >= 32 && b[i + j] <= 126) ? b[i + j] : '.');
+			{
+				char c = b[i + j];
+
+				printf("%c", isprint(c) ? c : '.');
+			}
+			else
+			{
+				printf(" ");
+			}
 		}
 
 		printf("\n");
