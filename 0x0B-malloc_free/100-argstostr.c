@@ -21,10 +21,7 @@ char *argstostr(int ac, char **av)
 		for (j = 0; av[i][j]; j++)
 			len++;
 
-		total_len += len;
-
-		if (i < ac - 1)
-			total_len++;
+		total_len += len + (av[i][0] != '\0');
 
 		len = 0;
 	}
