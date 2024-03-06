@@ -23,7 +23,7 @@ int count_words(char *str)
 			count++;
 		}
 	}
-	return count;
+	return (count);
 }
 
 /**
@@ -38,12 +38,12 @@ char **strtow(char *str)
 	char **words;
 
 	if (str == NULL || *str == '\0')
-		return NULL;
+		return (NULL);
 
 	word_count = count_words(str);
 	words = malloc(sizeof(char *) * (word_count + 1)); /*+1 for NULL terminator*/
 	if (words == NULL)
-		return NULL;
+		return (NULL);
 
 	for (i = 0, j = 0; i < word_count; i++)
 	{
@@ -60,7 +60,7 @@ char **strtow(char *str)
 			for (k = 0; k < i; k++)
 				free(words[k]);
 			free(words);
-			return NULL;
+			return (NULL);
 		}
 
 		strncpy(words[i], str + j, len); /*Copy word*/
@@ -69,5 +69,5 @@ char **strtow(char *str)
 	}
 	words[word_count] = NULL; /*Set the last element to NULL*/
 
-	return words;
+	return (words);
 }
