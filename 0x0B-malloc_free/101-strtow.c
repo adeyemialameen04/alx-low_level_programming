@@ -5,7 +5,6 @@
 /**
  * count_words - Counts the number of words in a string.
  * @str: The input string.
- *
  * Return: The number of words.
  */
 int count_words(char *str)
