@@ -1,3 +1,5 @@
 #!/bin/bash
-gcc -Wall -pedantic -Werror -Wextra -c *.c
-ar -cr liball.a *.o
+for file in *.c; do
+    gcc -c $file
+done
+ar rc liball.a *.o
