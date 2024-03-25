@@ -58,6 +58,7 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "peacock.color": "#f9e64f",
   "files.associations": {
-    "lists.h": "c"
+    "lists.h": "c",
+    "stdio.h": "c"
   }
 }
