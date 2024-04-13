@@ -62,15 +62,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		curr_hash_node = curr_hash_node->next;
 	}
 
-	hash_node = malloc(sizeof(hash_node_t));
+	hash_node = create_hash_node(key, value);
 	if (hash_node == NULL)
 		return (0);
-
-	hash_node->key = strdup(key);
-	hash_node->value = strdup(value);
-
 	hash_node->next = ht->array[index];
 	ht->array[index] = hash_node;
 
-	return (1);
+	return (0);
 }
