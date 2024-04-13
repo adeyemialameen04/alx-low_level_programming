@@ -47,9 +47,9 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
-	curr = ht->array[index];
 
 	/* I dey check if the key don dey there already make i update hin val*/
+	curr = ht->array[index];
 	while (curr != NULL)
 	{
 		if (strcmp(curr->key, key) == 0)
@@ -72,7 +72,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	while (curr != NULL && strcmp(curr->key, key) < 0)
 	{
 		prev = curr;
-		curr = curr->next;
+		curr = curr->snext;
 	}
 
 	/* meaning its the smallest */
@@ -93,7 +93,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		prev->snext = new_node;
 	}
 
-	if (new_node->next == NULL)
+	if (new_node->snext == NULL)
 		ht->stail = new_node;
 
 	return (1);
