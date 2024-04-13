@@ -8,7 +8,7 @@
  */
 hash_node_t *create_hash_node(const char *key, const char *value)
 {
-	hash_node_t *item = malloc(sizeof(hash_node_t));
+	hash_node_t *item = malloc(sizeof(hash_node_t *));
 
 	if (item == NULL)
 	{
