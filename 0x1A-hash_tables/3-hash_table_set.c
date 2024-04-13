@@ -1,73 +1,52 @@
 #include "hash_tables.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
- * create_hash_node - Creates a neq hash node.
- * @key: The key.
- * @value: The value.
- * @new_node: Where the node is going to be stored.
- * Return: hash_node_t.
- */
-int create_hash_node(const char *key, const char *value,
-					 hash_node_t **new_node)
-{
-	hash_node_t *item = malloc(sizeof(hash_node_t));
-
-	if (item == NULL)
-	{
-		return (0);
-	}
-
-	item->key = strdup(key);
-	if (item->key == NULL)
-	{
-		/* free(item); */
-		return (0);
-	}
-
-	item->value = strdup(value);
-	if (item->value == NULL)
-	{
-		/* free(item->key); */
-		/* free(item); */
-		return (0);
-	}
-
-	item->next = NULL;
-	*new_node = item;
-	return (1);
-}
-
-/**
- * hash_table_set - Adds an element in the hash_table.
- * @ht: The hasttable.
- * @key: The key.
- * @value: The value.
- * Return: 0 onSuccess and 1 onFailure.
+ * hash_table_set - Add or update an element in the hash table
+ * @ht: The hash table to add or update the key/value to
+ * @key: The key to be added or updated
+ * @value: The value associated with the key
+ *
+ * Return: 1 if it succeeded, 0 otherwise
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *hash_node, *curr_hash_node;
-	unsigned long int index = key_index((const unsigned char *)key, ht->size);
+	unsigned long int index;
+	hash_node_t *new_node, *tmp;
 
-	if (ht == NULL || key == NULL || strlen(key) == 0)
+	/* Check for valid input */
+	if (ht == NULL || key == NULL || *key == '\0')
 		return (0);
 
-	curr_hash_node = ht->array[index];
-	while (curr_hash_node != NULL)
+	/* Get the index for the key */
+	index = key_index((const unsigned char *)key, ht->size);
+
+	/* Check if the key already exists */
+	tmp = ht->array[index];
+	while (tmp != NULL)
 	{
-		if (strcmp(curr_hash_node->key, key) == 0)
+		if (strcmp(tmp->key, key) == 0)
 		{
-			free(curr_hash_node->value);
-			curr_hash_node->value = strdup(value);
+			/* Update the existing value */
+			free(tmp->value);
+			tmp->value = strdup(value);
 			return (1);
 		}
-		curr_hash_node = curr_hash_node->next;
+		tmp = tmp->next;
 	}
 
-	if (!create_hash_node(key, value, &hash_node))
+	/* Create a new node */
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
 		return (0);
+	new_node->key = strdup(key);
+	new_node->value = strdup(value);
 
-	hash_node->next = ht->array[index];
-	ht->array[index] = hash_node;
+	/* Add the new node to the beginning of the linked list */
+	new_node->next = ht->array[index];
+	ht->array[index] = new_node;
+
 	return (1);
 }
