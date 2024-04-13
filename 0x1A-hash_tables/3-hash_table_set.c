@@ -20,15 +20,15 @@ int create_hash_node(const char *key, const char *value,
 	item->key = strdup(key);
 	if (item->key == NULL)
 	{
-		free(item);
+		/* free(item); */
 		return (0);
 	}
 
 	item->value = strdup(value);
 	if (item->value == NULL)
 	{
-		free(item->key);
-		free(item);
+		/* free(item->key); */
+		/* free(item); */
 		return (0);
 	}
 
