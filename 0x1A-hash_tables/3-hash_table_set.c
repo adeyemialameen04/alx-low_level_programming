@@ -43,41 +43,40 @@ hash_node_t *create_hash_node(const char *key, const char *value)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *hash_node = create_hash_node(key, value);
-	unsigned long int index = key_index((const unsigned char *)key, ht->size);
+	unsigned long int index;
+	hash_node_t *new_node, *tmp;
 
-	hash_node_t *curr_hash_node = ht->array[index];
+	/* Check for valid input */
+	if (ht == NULL || key == NULL || *key == '\0')
+		return (0);
 
-	if (curr_hash_node == NULL)
+	/* Get the index for the key */
+	index = key_index((const unsigned char *)key, ht->size);
+
+	/* Check if the key already exists */
+	tmp = ht->array[index];
+	while (tmp != NULL)
 	{
-		ht->array[index] = hash_node;
-		return (1);
-	}
-	else
-	{
-		while (curr_hash_node->next != NULL)
+		if (strcmp(tmp->key, key) == 0)
 		{
-			if (strcmp(curr_hash_node->key, key) == 0)
-			{
-				free(hash_node->key);
-				free(hash_node->value);
-				free(hash_node);
-				strcpy(curr_hash_node->value, value);
-				return (1);
-			}
-			curr_hash_node = curr_hash_node->next;
-		}
-
-		if (strcmp(curr_hash_node->key, key) == 0)
-		{
-			free(hash_node->key);
-			free(hash_node->value);
-			free(hash_node);
-			strcpy(curr_hash_node->value, value);
+			/* Update the existing value */
+			free(tmp->value);
+			tmp->value = strdup(value);
 			return (1);
 		}
-
-		curr_hash_node->next = hash_node;
-		return (1);
+		tmp = tmp->next;
 	}
+
+	/* Create a new node */
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+		return (0);
+	new_node->key = strdup(key);
+	new_node->value = strdup(value);
+
+	/* Add the new node to the beginning of the linked list */
+	new_node->next = ht->array[index];
+	ht->array[index] = new_node;
+
+	return (1);
 }
