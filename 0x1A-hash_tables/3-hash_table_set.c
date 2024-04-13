@@ -4,22 +4,24 @@
  * create_hash_node - Creates a neq hash node.
  * @key: The key.
  * @value: The value.
+ * @new_node: Where the node is going to be stored.
  * Return: hash_node_t.
  */
-hash_node_t *create_hash_node(const char *key, const char *value)
+int create_hash_node(const char *key, const char *value,
+					 hash_node_t **new_node)
 {
 	hash_node_t *item = malloc(sizeof(hash_node_t));
 
 	if (item == NULL)
 	{
-		return (NULL);
+		return (0);
 	}
 
 	item->key = strdup(key);
 	if (item->key == NULL)
 	{
 		free(item);
-		return (NULL);
+		return (0);
 	}
 
 	item->value = strdup(value);
@@ -27,11 +29,12 @@ hash_node_t *create_hash_node(const char *key, const char *value)
 	{
 		free(item->key);
 		free(item);
-		return (NULL);
+		return (0);
 	}
 
 	item->next = NULL;
-	return (item);
+	*new_node = item;
+	return (1);
 }
 
 /**
@@ -62,11 +65,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		curr_hash_node = curr_hash_node->next;
 	}
 
-	hash_node = create_hash_node(key, value);
-	if (hash_node == NULL)
+	if (!create_hash_node(key, value, &hash_node))
 		return (0);
 	hash_node->next = ht->array[index];
 	ht->array[index] = hash_node;
 
-	return (0);
+	return (1);
 }
