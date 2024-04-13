@@ -46,7 +46,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *hash_node, *curr_hash_node;
 	unsigned long int index = key_index((const unsigned char *)key, ht->size);
 
-	if (ht == NULL || key == NULL || strlen(key) == 0)
+	if (ht == NULL || key == NULL || *key == '\0')
 		return (0);
 
 	curr_hash_node = ht->array[index];
