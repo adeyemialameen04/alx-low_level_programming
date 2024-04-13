@@ -8,7 +8,7 @@
  */
 hash_node_t *create_hash_node(const char *key, const char *value)
 {
-	hash_node_t *item = malloc(sizeof(hash_node_t *));
+	hash_node_t *item = malloc(sizeof(hash_node_t));
 
 	if (item == NULL)
 	{
@@ -62,9 +62,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		curr_hash_node = curr_hash_node->next;
 	}
 
-	hash_node = create_hash_node(key, value);
+	hash_node = malloc(sizeof(hash_node_t));
 	if (hash_node == NULL)
 		return (0);
+
+	hash_node->key = strdup(key);
+	hash_node->value = strdup(value);
+
 	hash_node->next = ht->array[index];
 	ht->array[index] = hash_node;
 
