@@ -1,0 +1,64 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+
+void reverse_ll(struct ListNode **head)
+{
+	if (*head == NULL)
+		return;
+	struct ListNode *prev = NULL, *curr = *head;
+
+	while (curr != NULL)
+	{
+		struct ListNode *nxt = curr->next;
+		curr->next = prev;
+
+		prev = curr;
+		curr = nxt;
+	}
+
+	*head = prev;
+}
+
+bool isPalindrome(struct ListNode *head)
+{
+	if (head == NULL)
+		return (false);
+
+	struct ListNode *copy = malloc(sizeof(struct ListNode));
+	struct ListNode *current = head;
+	struct ListNode *copy_current = copy;
+	while (current != NULL)
+	{
+		copy_current->val = current->val;
+		if (current->next != NULL)
+		{
+			copy_current->next = malloc(sizeof(struct ListNode));
+			copy_current = copy_current->next;
+		}
+		current = current->next;
+	}
+	copy_current->next = NULL;
+
+	struct ListNode *reversed = copy;
+	struct ListNode *curr_n = head;
+	reverse_ll(&reversed);
+	struct ListNode *curr_r = reversed;
+
+	while (curr_n != NULL && curr_r != NULL)
+	{
+		if (curr_n->val != curr_r->val)
+		{
+			return (false);
+		}
+
+		curr_n = curr_n->next;
+		curr_r = curr_r->next;
+	}
+
+	return (true);
+}
