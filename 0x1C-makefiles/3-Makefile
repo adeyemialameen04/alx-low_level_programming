@@ -19,4 +19,4 @@ oclean:
 
 flean: clean oclean
 
-re: oclean all
+re: fclean all
