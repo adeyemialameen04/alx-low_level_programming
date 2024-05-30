@@ -26,7 +26,3 @@ re: fclean all
 ifeq ($(wildcard m.h),)
 $(error Header file m.h is missing)
 endif
-
-# Implicit rules
-%.o: %.c m.h
-   $(CC) $(CFLAGS) -c $< -o $@
