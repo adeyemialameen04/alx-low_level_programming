@@ -3,6 +3,9 @@
 
 
 def island_perimeter(grid):
+    """
+    Island perimeter.
+    """
     length_row = len(grid)
     lenght_col = len(grid[0])
 
