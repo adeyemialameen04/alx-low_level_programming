@@ -12,15 +12,16 @@ $(NAME): $(OBJ)
    $(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-   $(RM)  $(NAME)
-
-fclean: clean
-   $(RM) $(OBJ)
+   $(RM) *~ $(NAME)
 
 oclean:
    $(RM) $(OBJ)
+
+fclean: clean oclean
 
 re: fclean all
 
 ${OBJ}: %.o: %.c m.h 
 	gcc ${CFLAGS} -c $< -o $@
+
+.PHONY: all clean oclean fclean re
