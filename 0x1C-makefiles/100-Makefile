@@ -1,25 +1,32 @@
 CC = gcc
-SRC = main.c school.c
+SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
+# Rules
 all: $(NAME)
 
-$(NAME): m.h $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ)
+   $(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) *~ $(NAME)
+   $(RM) $(wildcard *~) $(wildcard *.swp) $(NAME)
+
+fclean: clean
+   $(RM) $(OBJ)
 
 oclean:
-	$(RM) $(OBJ)
-
-fclean: clean oclean
+   $(RM) $(OBJ)
 
 re: fclean all
 
-.PHONY: clean all oclean fclean re
+# Check for m.h
+ifeq ($(wildcard m.h),)
+$(error Header file m.h is missing)
+endif
 
-
+# Implicit rules
+%.o: %.c m.h
+   $(CC) $(CFLAGS) -c $< -o $@
