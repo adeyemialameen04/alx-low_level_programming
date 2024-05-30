@@ -12,7 +12,7 @@ $(NAME): $(OBJ)
    $(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-   $(RM) $(wildcard *~) $(wildcard *.swp) $(NAME)
+   $(RM)  $(NAME)
 
 fclean: clean
    $(RM) $(OBJ)
@@ -22,7 +22,5 @@ oclean:
 
 re: fclean all
 
-# Check for m.h
-ifeq ($(wildcard m.h),)
-$(error Header file m.h is missing)
-endif
+${OBJ}: %.o: %.c m.h 
+	gcc ${CFLAGS} -c $< -o $@
