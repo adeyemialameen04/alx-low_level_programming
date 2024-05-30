@@ -1,7 +1,7 @@
 CC = gcc
 OBJ = $(SRC:.c=.o)
-NAME = holberton
-SRC = main.c holberton.c
+NAME = school
+SRC = main.c school.c
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 .PHONY: all clean oclean fclean re
