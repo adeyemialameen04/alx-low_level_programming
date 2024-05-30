@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Documenting module"""
 
+
 def island_perimeter(grid):
     length_row = len(grid)
     lenght_col = len(grid[0])
